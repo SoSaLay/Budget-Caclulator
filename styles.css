@@ -1,0 +1,29 @@
+body{
+    font-family: "Oswald", "Poppins";
+    margin-bottom: 0;
+    margin-top: 0;
+    background-color: #232a33;  
+}
+
+
+.container{
+    margin-top: 50px;
+    text-align: center;
+}
+
+
+button{
+    padding:10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #f1deec;
+}
+
+h1 ,p{
+  color: #ffffff;  
+  font-size: 2rem;
+}
+
+p{
+    font-family:"Poppins" ;
+}
