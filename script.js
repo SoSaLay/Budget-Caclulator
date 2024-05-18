@@ -32,10 +32,12 @@ calculateNetIncome(){
 
     //Update HTML elements with calculated values. The second $ will represent U.S currency and fix limits the decimals returned by 2
     document.getElementById('taxes').innerText= `$${tax.toFixed(2)}`
+    document.getElementById('grossIncome').innerText= `$${finalIncome.toFixed(2)}`
     document.getElementById('netIncome').innerText= `$${netIncome.toFixed(2)}`
     document.getElementById('monthNetIncome').innerText= `$${netIncome.toFixed(2)}`
-    document.getElementById('annualNetIncomee').innerText= `$${(netIncome*12).toFixed(2)}`
+    document.getElementById('annualNetIncome').innerText= `$${(netIncome*12).toFixed(2)}`
 
+    
 
     // Call other methods to update related calculations
     this.calcMaxMonthlySpend()
@@ -84,11 +86,20 @@ calcAnnual(){
 }
 }
 
+
+// Now start using the class the variable budget will manage and update the budget data.
+
 const budget = new Budget();
 
 function addIncome() {
+
+//set and retrieves the value from the HTML to add income
 const description = document.getElementById('incomeDescription').value;
 const amount = parseFloat(document.getElementById('incomeAmount').value);
+
+
+//condtional checks input validation. If it's and empy string descrip will return as false
+//  and isNaN returns regulary true if the amount is not a numner so use ! to get the opposite
 
 if (description && !isNaN(amount) && amount > 0) {
     budget.addIncome(description, amount);
@@ -112,6 +123,8 @@ const item = document.createElement('div');
 item.innerText = `${description}: $${amount.toFixed(2)}`;
 incomeList.appendChild(item);
 }
+//Target the container div incomeList. Create a new div within that div called item which
+//is updated with decription and ammount then added to the container div. 
 
 function displayExpense(description, amount) {
 const expenseList = document.getElementById('expenseList');
@@ -120,12 +133,7 @@ item.innerText = `${description}: $${amount.toFixed(2)}`;
 expenseList.appendChild(item);
 }
 
-function calculateExpenses() {
-budget.calculateTotalExpenses();
-budget.calcMaxMonthlySpend();
-budget.calculateMonthlySavings();
-budget.calculateAnnualValues();
-}
+
 
 
 

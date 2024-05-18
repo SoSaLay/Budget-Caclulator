@@ -24,6 +24,10 @@
                     <label for="incomeAmount">Amount:</label>
                     <input type="number" id="incomeAmount" placeholder="Income amount">
                     <button onclick="addIncome()">Add Income</button>
+                    <div id="incomeList">
+
+                    </div>
+                    <p>Monthly Gross Income:<span id="grossIncome">$0.00</span> </p>
 
                     <p>Probable Payroll Tax Witholdings & Deductions(30%):<span id="taxes">$0.00</span> </p>
                     <p>Monthly Net Income:<span id="netIncome">$0.00</span> </p>
@@ -41,6 +45,9 @@
                     <label for="expenseAmount">Amount:</label>
                     <input type="number" id="expenseAmount" placeholder="Expense amount">
                     <button onclick="addExpense()">Add Expense</button>
+                    <div id="expenseList">
+                        
+                    </div>
 
                     <p> Total Monthly Expenses:<span id="totalExpenses">$0.00</span> </p>
                 </div>
