@@ -22,21 +22,20 @@
 
         <div class="section"> 
 
-            <h2> Enter Income</h2>
+            <h2> Enter Income Per Month:</h2>
                 <div id="incomeSection"> 
-                    <label for="incomeDescription">Description:</label>
+                    <label for="incomeDescription">Description</label>
                     <input type="text" id="incomeDescription" placeholder="">
-                    <label for="incomeAmount">Amount:</label>
+                    <label for="incomeAmount">Amount</label>
                     <input type="number" id="incomeAmount" placeholder="">
                     <button onclick="addIncome()">Add Income</button>
                     <div id="incomeList">
 
                     </div>
 
-                    <h2>Monthly Gross Income:<span id="grossIncome">$0.00</span> </h2>
-
-                    <h2>Probable Payroll Tax Witholdings & Deductions(30%):<span id="taxes">$0.00</span> </h2>
-                    <h2>Monthly Net Income:<span id="netIncome">$0.00</span> </h2>
+                    <h2>Total Monthly Earnings<span id="grossIncome">$0.00</span> </h2>
+                    <h2>Tax Witholdings or Deductions(30%)<span id="taxes">$0.00</span> </h2>
+                    <h2>Spendable Income<span id="netIncome">$0.00</span> </h2>
                 </div>
 
         </div>
@@ -44,18 +43,18 @@
 
         <div class="section"> 
 
-            <h2> Enter Expenses</h2>
+            <h2> Enter Expenses Per Month:</h2>
                 <div id="expenseSection"> 
                     <label for="expenseDescription">Description:</label>
                     <input type="text" id="expenseDescription" placeholder="">
                     <label for="expenseAmount">Amount:</label>
                     <input type="number" id="expenseAmount" placeholder="">
                     <button onclick="addExpense()">Add Expense</button>
-                    <div id="expenseList">
-                        
-                    </div>
+                        <div id="expenseList">
+                            
+                        </div>
 
-                    <h2> Total Monthly Expenses:<span id="totalExpenses">$0.00</span> </h2>
+                    <h2> Total Monthly Expenses<span id="totalExpenses">$0.00</span> </h2>
                 </div>
 
         </div>
@@ -67,16 +66,16 @@
             <div class="resultBox">
                <h3>Monthly Calculations</h3>
                <p>Monthly Net Income:<span id="monthNetIncome">$0.00</span></p> 
-               <p>Maximum Amount You Can Spend Per Month:<span id="monthMaxNetIncome">$0.00</span></p> 
-               <p>Amount to Save per month(20%):<span id="monthSave">$0.00</span></p> 
+               <p>Monthly Spending Limit:<span id="monthMaxNetIncome">$0.00</span></p> 
+               <p>Save Per month(20%):<span id="monthSave">$0.00</span></p> 
 
             </div>
 
             <div class="resultBox">
                 <h3>Annual Calculations</h3>
                 <p>Annual Net Income:<span id="annualNetIncome">$0.00</span></p> 
-                <p>Maximum Amount You Can Spend Per Year:<span id="yearMaxNetIncome">$0.00</span></p> 
-                <p>Amount to Save(20% of Net Income):<span id="yearSave">$0.00</span></p> 
+                <p>Yearly Spending Limit:<span id="yearMaxNetIncome">$0.00</span></p> 
+                <p>Save Per year(20%):<span id="yearSave">$0.00</span></p> 
  
              </div>
 

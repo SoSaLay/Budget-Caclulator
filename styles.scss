@@ -1,0 +1,402 @@
+
+$primaryColor:#f8f4e7;
+$secondaryColor: #fbc2b6;
+$fontOswald:"Oswald";
+$fontPoppins:"Poppins";
+$navyHomeAccent: #232a33;
+$orangeHomeAccent: #f5a67f;
+
+@mixin gradient($color1, $color2){
+    background: linear-gradient(to bottom, $color1, $color2);
+}
+
+
+$breakpoint-phone: 480px;
+$breakpoint-tablet: 768px;
+$breakpoint-laptop: 1024px;
+
+
+@mixin respond-to($breakpoint){
+
+@if $breakpoint == phone{
+    @media(max-width: $breakpoint-phone){@content;}
+} 
+@else if  $breakpoint == tablet{
+    @media(max-width: $breakpoint-tablet){@content;}
+}
+@else if  $breakpoint == laptop{
+    @media(max-width: $breakpoint-laptop){@content;}
+}
+
+}
+
+//Mixins are essentially functions. They take parameter and it's the same way when you call the
+//name of the mixin, but you have to use @include before you call the name and pass the parameter
+//but an issue, paramters are not activated when called on. Had to replace them with @media for now
+
+
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+// * target all the elements on the page then you can firter specifc with the iddivual elemnts like
+// before or after. Setting border-box for all elements and their ::before and ::after makes layout responsive
+
+html, body{
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    margin-bottom: 0;
+    color: $primaryColor;
+    background-color: #232a33; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+    
+     
+}
+
+.container{
+    @include gradient($navyHomeAccent, $orangeHomeAccent );
+
+}
+
+
+
+
+
+button{
+padding:10px 20px;
+font-size: 16px;
+cursor: pointer;
+background-color: #f1deec;
+color: #060602;
+border: none; 
+border-radius: 15px; 
+padding: 10px 20px; 
+font-size: 1.3rem; 
+cursor: pointer; 
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+transition: all 0.3s ease;
+
+&:hover {
+  background-color: #be8fff;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5); 
+  transform: translateY(-5px); 
+}
+
+}
+
+.headline{
+    font-size: 35px;
+    color: #46ce08;
+    text-align: center;
+
+    @include respond-to(tablet){
+        font-size: 25px;
+    }
+
+    @include respond-to(phone){
+        font-size: 20px;
+    }
+
+
+}
+
+.homeImage{
+    width: 300px;
+    height: 300px;
+    padding: 20px;
+    display:block;
+    margin: 0 auto;
+}
+
+.homeContent{
+    text-align: center;
+}
+
+h1,h2, h3{
+    text-align: center;
+}
+
+h1 {
+  font-family: $fontOswald;
+}
+
+p{
+    font-family:$fontPoppins;
+    font-size: 20px;
+
+    @include respond-to(small){
+        font-size: 12px;
+    }
+
+}
+h3{
+    font-size: 25px;
+}
+
+a{
+    color: white;
+    text-decoration: none;
+
+&:hover{
+    text-decoration: underline;
+}
+}
+
+.entrieCalculatorBox{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: $primaryColor;
+    color: black;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 1200px;
+    box-shadow: 0 4px 8px rgb(0,0,0,0.1);
+
+    @include respond-to(tablet){
+        max-width: 90%;
+    }
+
+    @include respond-to(phone){
+        max-width: 100%;
+        padding: 10px;
+    }
+
+
+}
+
+.resultBox{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f87d63;
+    color: black;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 1200px;
+    box-shadow: 0 4px 8px rgb(0,0,0,0.1);
+
+    @include respond-to(tablet){
+        max-width: 90%;
+    }
+
+    @include respond-to(phone){
+        max-width: 100%;
+        padding: 10px;
+    }
+    
+}
+
+.section label, .section input {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+    text-align: center;
+   
+}
+
+.section label{
+    font-weight: bold;
+    color: #060602;
+    font-size: 20px;
+    padding-bottom: 5px;
+    font-family: $fontPoppins;
+    width: 100%;
+    text-align: center;
+}
+
+
+div#expenseSection input{
+    width: 65%;
+}
+.section input, button{
+    width: 45%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    text-align: center; 
+    display: block; /* Ensure inputs are block elements */
+    margin-left: auto; /* Center input box */
+    margin-right: auto; /* Center input box */
+
+    @media (max-width: 1024px) {
+        width: 80%; // Adjust width for laptop screens
+      }
+    
+      @media (max-width: 768px) {
+        width: 90%; // Adjust width for tablet screens
+      }
+    
+      @media (max-width: 480px) {
+        width: 95%; // Adjust width for phone screens
+      }
+
+
+}
+
+.section {
+  
+    @media (max-width: 1024px) {
+      padding: 15px;
+      margin: 15px; // Adjust margin for better fit
+    }
+  
+    @media (max-width: 768px) {
+      padding: 10px;
+      margin: 10px; // Adjust margin for better fit
+    }
+  
+    @media (max-width: 480px) {
+      padding: 5px;
+      margin: 5px; // Adjust margin for better fit
+    }
+  }
+
+
+.section,  .sectionResult{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background-color: #f6f3ea;
+    color: black;
+    padding:20px;
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8p rgb(0,0,0,0.1);
+
+
+    @media (max-width: 1024px) {
+        padding: 15px;
+        margin: 15px;
+      }
+    
+      @media (max-width: 768px) {
+        padding: 10px;
+        margin: 10px;
+      }
+    
+      @media (max-width: 480px) {
+        padding: 5px;
+        margin: 5px;
+      }
+}
+
+
+.section  button, .section h2{
+    align-self: center;
+}
+
+h2, h3{
+    margin: 20px 0;
+    font-family: $fontPoppins;
+    letter-spacing: 1px;
+    position: relative;
+
+  
+}
+
+h2::after, h3::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 3px;
+    margin: 10px auto;
+}
+
+h2 span, h3 span {
+    background: #232a33;
+    color: #f1deec;
+    padding: 2px 10px;
+    border-radius: 50px;
+}
+
+p span{
+    background-color: white;
+    color:black;
+    padding: 2px 10px;
+    border-radius:15px;
+
+}
+
+
+
+
+.sectionResult{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+
+
+
+.income-item, .expense-item{
+    background-color: $secondaryColor;
+    width: 35%;
+    color: black;
+    padding:10px;
+    margin: 10px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8p rgb(0,0,0,0.1);
+
+}
+
+
+
+
+
+footer {
+    margin-top: 175px;
+    padding: 30px; 
+    background-color: #302d2c; 
+    text-align: center;
+    color: white; 
+    width: 100%;
+    border-top: 5px solid $secondaryColor; 
+  }
+  
+  footer ul {
+    list-style: none;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bolder;
+    padding: 0;
+    margin: 20px 0; 
+  }
+  
+  footer li {
+    margin-bottom: 10px; 
+  }
+  
+  footer a {
+    color: white;
+    text-decoration: none; 
+    transition: color 0.2s ease-in-out; 
+  }
+  
+  footer a:hover {
+    color: $secondaryColor; 
+  }
+  
+  
+  
