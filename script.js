@@ -120,6 +120,7 @@ if (description && !isNaN(amount) && amount > 0) {
 function displayIncome(description, amount) {
 const incomeList = document.getElementById('incomeList');
 const item = document.createElement('div');
+item.classList.add(`income-item`)
 item.innerText = `${description}: $${amount.toFixed(2)}`;
 incomeList.appendChild(item);
 }
@@ -129,6 +130,7 @@ incomeList.appendChild(item);
 function displayExpense(description, amount) {
 const expenseList = document.getElementById('expenseList');
 const item = document.createElement('div');
+item.classList.add(`expense-item`)
 item.innerText = `${description}: $${amount.toFixed(2)}`;
 expenseList.appendChild(item);
 }

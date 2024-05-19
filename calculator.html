@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="styles.css">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Freeman&family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Oswald:wght@200..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+    </style>
+    
 </head>
 
 
@@ -20,17 +25,18 @@
             <h2> Enter Income</h2>
                 <div id="incomeSection"> 
                     <label for="incomeDescription">Description:</label>
-                    <input type="text" id="incomeDescription" placeholder="describe income">
+                    <input type="text" id="incomeDescription" placeholder="">
                     <label for="incomeAmount">Amount:</label>
-                    <input type="number" id="incomeAmount" placeholder="Income amount">
+                    <input type="number" id="incomeAmount" placeholder="">
                     <button onclick="addIncome()">Add Income</button>
                     <div id="incomeList">
 
                     </div>
-                    <p>Monthly Gross Income:<span id="grossIncome">$0.00</span> </p>
 
-                    <p>Probable Payroll Tax Witholdings & Deductions(30%):<span id="taxes">$0.00</span> </p>
-                    <p>Monthly Net Income:<span id="netIncome">$0.00</span> </p>
+                    <h2>Monthly Gross Income:<span id="grossIncome">$0.00</span> </h2>
+
+                    <h2>Probable Payroll Tax Witholdings & Deductions(30%):<span id="taxes">$0.00</span> </h2>
+                    <h2>Monthly Net Income:<span id="netIncome">$0.00</span> </h2>
                 </div>
 
         </div>
@@ -41,15 +47,15 @@
             <h2> Enter Expenses</h2>
                 <div id="expenseSection"> 
                     <label for="expenseDescription">Description:</label>
-                    <input type="text" id="expenseDescription" placeholder="describe expenses">
+                    <input type="text" id="expenseDescription" placeholder="">
                     <label for="expenseAmount">Amount:</label>
-                    <input type="number" id="expenseAmount" placeholder="Expense amount">
+                    <input type="number" id="expenseAmount" placeholder="">
                     <button onclick="addExpense()">Add Expense</button>
                     <div id="expenseList">
                         
                     </div>
 
-                    <p> Total Monthly Expenses:<span id="totalExpenses">$0.00</span> </p>
+                    <h2> Total Monthly Expenses:<span id="totalExpenses">$0.00</span> </h2>
                 </div>
 
         </div>
@@ -58,7 +64,7 @@
         <div class="sectionResult">
 
             <h2>Results</h2>
-            <div>
+            <div class="resultBox">
                <h3>Monthly Calculations</h3>
                <p>Monthly Net Income:<span id="monthNetIncome">$0.00</span></p> 
                <p>Maximum Amount You Can Spend Per Month:<span id="monthMaxNetIncome">$0.00</span></p> 
@@ -66,7 +72,7 @@
 
             </div>
 
-            <div>
+            <div class="resultBox">
                 <h3>Annual Calculations</h3>
                 <p>Annual Net Income:<span id="annualNetIncome">$0.00</span></p> 
                 <p>Maximum Amount You Can Spend Per Year:<span id="yearMaxNetIncome">$0.00</span></p> 
@@ -82,7 +88,14 @@
          <!-- Entrire Calculator Section -->
 
 
-
+         <footer >
+            <ul>
+                <li><a href="index.html">How Do I Spend My Extra Money?</a></li>
+                <li><a href="products.html">Pay Taxes!?</a></li>
+                <li><a href="contact.html">Why Save Money?</a></li>
+            </ul>
+        
+          </footer>
 
 
 
