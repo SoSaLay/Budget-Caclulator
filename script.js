@@ -53,6 +53,10 @@ calculateTotalExpenses(){
     this.calcMaxMonthlySpend()
     this.calcMonthlySave()
     this.calcAnnual()
+
+
+    // The main function handles the overall task of expenses then 
+    // each sub-function is called to perform its specific task to accurately updating the expenses
 }
 
 
@@ -99,7 +103,7 @@ const amount = parseFloat(document.getElementById('incomeAmount').value);
 
 
 //condtional checks input validation. If it's and empy string descrip will return as false
-//  and isNaN returns regulary true if the amount is not a numner so use ! to get the opposite
+//  and isNaN returns regulary true if the amount is not a numner, so use ! to get the opposite
 
 if (description && !isNaN(amount) && amount > 0) {
     budget.addIncome(description, amount);
